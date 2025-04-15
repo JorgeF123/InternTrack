@@ -29,8 +29,10 @@ def main():
 
         except ValueError:
             print('Invalid input. Please enter a number.')
+            print('')
         except IndexError:
             print('Invalid index. Please choose a number from the list.')
+            print('')
 
 
 
@@ -61,16 +63,19 @@ def add_application():
     }
     applications.append(application)
     print('Application added!')
+    print('')
 
 
 
 def view_applications():
     if not applications:
         print('No applications found.')
+        print('')
 
     else:
         for i,application in enumerate(applications):
             print(f"{i + 1}. Company: {application['company']}, Role: {application['role']}, Date Applied: {application['date']},  Status: {application['status']}")
+            print('')
 
 
 
@@ -81,8 +86,10 @@ def update_status():
         new_status = input('enter new status')
         applications[application_index]['status'] = new_status
         print('Status updated!')
+        print('')
     else:
         print('Invalid index.')
+        print('')
 
 def delete_application():
     view_applications()
@@ -91,7 +98,9 @@ def delete_application():
        del_app = applications[application_index]
        del applications[application_index]
        print(f"Deleted application for {del_app['company']}.")
+       print('')
     else:
         print('Invalid index.')
+        print('')
 
 main()
